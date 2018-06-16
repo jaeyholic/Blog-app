@@ -1,59 +1,65 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Blog-app
-      </h1>
-      <h2 class="subtitle">
-        Nuxt Blog App
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+ <div class="home-page">
+   <section class="intro">
+     <h1>Get the latest Tech news</h1>
+   </section>
+
+   <section class="featured-post">
+      <PostList />
+    </section>
+ </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import PostList from '@/components/Posts/PostList';
+
 
 export default {
   components: {
-    Logo
+    PostList
   }
 }
 </script>
 
 <style>
-.container
-{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.intro {
+  height: 300px;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  background-image: url('~assets/images/page-header.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  font-size: 1rem;
   text-align: center;
+  color: #f4f9f4;
+  background-color: rgb(32, 53, 65);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #003545;
+  box-sizing: border-box;
+  border: 1px solid #003545;
 }
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+
+@media (min-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
 }
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.links
-{
-  padding-top: 15px;
+
+.featured-post {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 </style>
