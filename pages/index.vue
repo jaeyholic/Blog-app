@@ -5,7 +5,7 @@
    </section>
 
    <section class="featured-post">
-      <PostList />
+      <PostList :posts="loadPosts"/>
     </section>
  </div>
 </template>
@@ -17,6 +17,24 @@ import PostList from '@/components/Posts/PostList';
 export default {
   components: {
     PostList
+  },
+  data() {
+    return {
+      loadPosts: [
+        {
+          id: '1',
+          title: 'First Post',
+          previewText: 'This is our first post',
+          thumbnailLink: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg'
+        },
+        {
+          id: '2',
+          title: 'Second Post',
+          previewText: 'This is our second  post',
+          thumbnailLink: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg'
+        }
+      ]
+    }
   }
 }
 </script>

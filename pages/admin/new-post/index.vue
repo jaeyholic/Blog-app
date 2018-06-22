@@ -11,6 +11,7 @@
  
 
   export default {
+    layout: 'admin',
     components: {
       AdminPostForm
     }
